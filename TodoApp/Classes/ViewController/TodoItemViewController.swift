@@ -12,13 +12,14 @@ import CoreData
 class TodoItemViewController: UIViewController {
     
     @IBOutlet weak var todoField: UITextField!
+    @IBOutlet weak var todoBody: UITextField!
     var task: Todo? = nil
 
     override func viewDidLoad() {
         super.viewDidLoad()
         if let taskTodo = task {
             todoField.text = taskTodo.item
-        }
+            todoBody.text = taskTodo.body        }
     }
     
     override func didReceiveMemoryWarning() {
@@ -47,11 +48,13 @@ class TodoItemViewController: UIViewController {
     func createTask() {
         let newTask: Todo = Todo.MR_createEntity()! as Todo
         newTask.item = todoField.text
+        newTask.body = todoBody.text
         newTask.managedObjectContext!.MR_saveToPersistentStoreAndWait()
     }
     
     func editTask() {
         task?.item = todoField.text
+        task?.body = todoBody.text
         task?.managedObjectContext!.MR_saveToPersistentStoreAndWait()
     }
     

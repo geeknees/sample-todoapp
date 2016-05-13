@@ -19,14 +19,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="tcP-JF-Nau">
-                                <rect key="frame" x="20" y="0.0" width="560" height="600"/>
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="TodoListItem" id="lDd-Pu-4bZ" customClass="TodoListItemTableViewCell" customModule="TodoApp" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="92" width="560" height="44"/>
+                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="lDd-Pu-4bZ" id="1og-4v-osd">
-                                            <rect key="frame" x="0.0" y="0.0" width="560" height="43.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
                                         <connections>
@@ -42,8 +42,8 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="tcP-JF-Nau" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="Vb8-AV-HmP"/>
-                            <constraint firstAttribute="trailing" secondItem="tcP-JF-Nau" secondAttribute="trailing" constant="20" id="ilC-vD-64G"/>
+                            <constraint firstItem="tcP-JF-Nau" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Vb8-AV-HmP"/>
+                            <constraint firstAttribute="trailing" secondItem="tcP-JF-Nau" secondAttribute="trailing" id="ilC-vD-64G"/>
                             <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="tcP-JF-Nau" secondAttribute="bottom" id="lfP-OY-N1J"/>
                             <constraint firstItem="tcP-JF-Nau" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="wQ3-gP-NkH"/>
                         </constraints>
@@ -80,13 +80,24 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="arM-rd-6Fv">
+                                <rect key="frame" x="40" y="150" width="538" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="A1I-wC-bB7"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="MOn-2v-nCD" firstAttribute="top" secondItem="gNL-gr-GqP" secondAttribute="topMargin" constant="100" id="1o4-43-pvv"/>
                             <constraint firstAttribute="trailingMargin" secondItem="MOn-2v-nCD" secondAttribute="trailing" constant="50" id="8O9-a5-dGl"/>
                             <constraint firstItem="MOn-2v-nCD" firstAttribute="centerX" secondItem="gNL-gr-GqP" secondAttribute="centerX" id="Esx-YT-Sd4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="arM-rd-6Fv" secondAttribute="trailing" constant="2" id="Ujd-h2-fqo"/>
                             <constraint firstItem="MOn-2v-nCD" firstAttribute="leading" secondItem="gNL-gr-GqP" secondAttribute="leadingMargin" constant="50" id="f74-yk-A4k"/>
+                            <constraint firstItem="arM-rd-6Fv" firstAttribute="leading" secondItem="gNL-gr-GqP" secondAttribute="leadingMargin" constant="20" id="hzg-wR-J3c"/>
+                            <constraint firstItem="arM-rd-6Fv" firstAttribute="top" secondItem="gNL-gr-GqP" secondAttribute="topMargin" constant="150" id="uiQ-6W-D4i"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Todo Item" id="7eA-od-NFP">
@@ -104,6 +115,7 @@
                     <connections>
                         <outlet property="cancel" destination="nAD-PQ-Jtf" id="PCk-pu-D3P"/>
                         <outlet property="save" destination="6iI-w8-RBK" id="J1o-zc-ecg"/>
+                        <outlet property="todoBody" destination="arM-rd-6Fv" id="7d0-MP-FMs"/>
                         <outlet property="todoField" destination="MOn-2v-nCD" id="OHb-f3-74L"/>
                     </connections>
                 </viewController>
